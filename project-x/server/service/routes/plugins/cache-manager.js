@@ -26,6 +26,7 @@ let cacheManager = (function(){
             return result;
         }else{
             printer.error(`缓存中不包含属性为 ${key} 的内容！`);
+            return false;
         }
     };
 
@@ -36,9 +37,35 @@ let cacheManager = (function(){
         _cache[key] = value;
     };
 
+    /**
+     * 获取登录信息
+     * @param account
+     * @returns {*}
+     */
+    let getLoginUUID = (account) => {
+        let result = _cache.login[account];
+        if(result){
+            return result;
+        }else{
+            printer.error(`缓存中无 ${account} 信息！`);
+            return false;
+        }
+    };
+
+    /**
+     * 设置登录缓存
+     * @param account
+     * @param uuid
+     */
+    let setLoginUUID = (account, uuid) => {
+        _cache.login[account] = uuid;
+    };
+
     return {
         set : setCache,
-        get : getCache
+        get : getCache,
+        getLogin : getLoginUUID,
+        setLogin : setLoginUUID
     };
 })();
 
