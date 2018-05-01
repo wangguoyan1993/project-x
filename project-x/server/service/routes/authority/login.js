@@ -31,15 +31,15 @@ let loginMethod = (req, res) => {
     conDB(sql, function(result){
         let relPassword = result[0].password;
         if(password === relPassword){
-            let _uuid = uuId.v1();
+            // let _uuid = uuId.v1();
 
             //定义cookie，并将uuid存入cookie对应当前用户的账号中
             // let _cookie = {};
             // _cookie[`${account}`] = _uuid;
-            res.cookie('login', _uuid, {maxAge : 60000});
+            // res.cookie('login', _uuid, {maxAge : 60000});
 
             //将登录信息写入缓存
-            cache.setLogin(account.toString(), _uuid);
+            // cache.setLogin(account.toString(), _uuid);
 
             //设置session
             // app.use(session({
@@ -51,7 +51,7 @@ let loginMethod = (req, res) => {
             // }));
 
             res.send({
-                url : 'http://localhost:8080',
+                url : 'http://localhost:8080/web-mods/page/main.html',
                 sig : 0
             });
         }else{
