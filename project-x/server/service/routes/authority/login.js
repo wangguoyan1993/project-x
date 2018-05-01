@@ -51,7 +51,7 @@ let loginMethod = (req, res) => {
             // }));
 
             res.send({
-                url : 'http://localhost:8080/web-mods/page/main.html',
+                url : 'http://localhost:8080/web-mods/page/index.html',
                 sig : 0
             });
         }else{
