@@ -14,7 +14,7 @@ let queryDB = (sql, callback) => {
             host : 'localhost',
             user : 'root',
             password : '123456',
-            database : 'jack',
+            database : 'mysql',
             port : 3306
         });
 
