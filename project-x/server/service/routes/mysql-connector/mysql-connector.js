@@ -13,8 +13,8 @@ let queryDB = (sql, callback) => {
         let connection = mysql.createConnection({
             host : 'localhost',
             user : 'root',
-            password : '123456',
-            database : 'mysql',
+            password : 'mcl123',
+            database : 'jack',
             port : 3306
         });
 
