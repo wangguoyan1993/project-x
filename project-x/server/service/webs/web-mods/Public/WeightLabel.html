@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link href="../../webjar/bootstrap/3.3.7-1/css/bootstrap.css" rel="stylesheet">-->
+
+    <!--<script src="../../webjar/jquery/3.1.1/jquery.js" type="text/javascript"></script>-->
+    <!--<script type="text/javascript" src="../../webjar/jquery/3.1.1/jquery.min.js"></script>-->
+    <!--<script src="../../webjar/bootstrap/3.3.7-1/js/bootstrap.js" type="text/javascript"></script>-->
+    <!--<script src="../../WebUI/Public/ibcpAjax.js"></script>-->
+    <!--<script src="../../WebUI/Public/ibcpLayer.js"></script>-->
+    <!--<script src="../../webjar/layer/layer.js"></script>-->
+    <script type="text/javascript" src="../../WebUI/Public/publicjs.js"></script>
+    <script src="../../webjar/jquery/jquery-barcode.js" type="text/javascript"></script>
+    <script src="../../webjar/jquery/jquery.PrintArea.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="modTagCon" style="width:100%;height:100%;">
+        <table id="modTag" style="width:105mm;height:105mm;border:0;margin:0 auto;padding:5px;font-family:'微软雅黑';color:#000;font-weight:bold;font-size:16px;">
+            <tr>
+                <td colspan="12" style="text-align:center;font-size:20px;font-weight:bold;"><strong>称量标签</strong></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    产品名称：
+                </td>
+                <td colspan="9">
+                    <label id="Product_Name">二乙酰氨乙酸乙二胺</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    产品批次：
+                </td>
+                <td colspan="9">
+                    <label id="Product_Batch">170220</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    物料名称：
+                </td>
+                <td colspan="9">
+                    <label id="Mat_Name">活性炭</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    物料批次：
+                </td>
+                <td colspan="9">
+                    <label id="Mat_Batch">17022001</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    有效期至：
+                </td>
+                <td colspan="9">
+                    <label id="Max_Date">2017-08-23</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    净重：
+                </td>
+                <td colspan="3">
+                    <label id="Net_Weight">30kg</label>
+                </td>
+                <td colspan="3" style="text-align:justify;">
+                    皮重：
+                </td>
+                <td colspan="3">
+                    <label id="Tare">1kg</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    称量时间：
+                </td>
+                <td colspan="9">
+                    <label id="Weight_Date">2017-02-20 16:42:00</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    操作人：
+                </td>
+                <td colspan="9">
+                    <label id="Operation_Staff">操作工</label>
+                </td>
+            </tr>
+
+            <tr rowspan="2" style="height:70px;">
+                <td colspan="3" style="text-align:justify;">
+                    条码：
+                </td>
+                <td colspan="9">
+                    <span id="Bar_Code"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    打印人：
+                </td>
+                <td colspan="9">
+                    <label id="Print_Staff">操作工</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align:justify;">
+                    打印时间：
+                </td>
+                <td colspan="9">
+                    <label id="Print_Date">2017-02-20 16:48:31</label>
+                </td>
+            </tr>
+        </table>
+</div>
+<div id="TagCon" style="margin:0 auto;padding:0;" hidden="hidden"></div>
+
+<button id="printTag" type="button" class="btn btn-primary" style="margin-left:90mm;"><span class="glyphicon glyphicon-print">&nbsp;</span>打印</button>
+
+<script type="text/javascript">
+    $(function(){
+        try{
+            initMethod();
+
+            //打印按钮
+            $('#printTag').on('click', function(){
+                $('#printTag').remove();
+                //$('#TagCon').printArea();
+                window.print();
+            });
+        }
+        catch(e){
+            alert(e);
+        }
+
+    });
+
+    function initMethod(){
+        'use strict';
+        setInfoForTable();          //填写表格信息
+    }
+
+    //表格赋值
+    function setInfoForTable(){
+        'use strict';
+        var PrintLabelPath = serverPath + "weighing/weighingTag";
+        var resultId = GetUrlParam(resultId);
+        var datas = {
+            "id" : resultId,
+            "sid" : 3
+        };
+        ibcpAjax.Select(PrintLabelPath, datas, true, function(result){
+            var data = result.data;
+            $('#Product_Name').html(data.materialName);       //产品名称
+            $('#Product_Batch').html(data.productBatch);             //产品批次
+            $('#Mat_Name').html(data.materialName);                       //物料名称
+            $('#Mat_Batch').html(data.materialBacth);                           //物料批次
+            $('#Max_Date').html(data.validTime);                              //有效期至
+            $('#Net_Weight').html(data.quantity + data.symbol);                            //净重
+            $('#Tare').html(data.tare + data.symbol);                                  //皮重
+            $('#Weight_Date').html(data.weighingTime);                           //称量时间
+            $('#Operation_Staff').html(data.userName);                       //操作人
+
+            //生成条形码
+            $('#Bar_Code').barcode(data.barcode,"code128",{
+                output: 'css',
+                //bgColor: '#ff0000',
+                color: '#000',
+                barWidth: 2,
+                barHeight: 50,
+                //moduleSize: 5,
+                //posX: 10,
+                //posY: 5,
+                addQuietZone: false,      //是否添加空白区（内边距）
+                bgColor: "#FFFFFF",  //条码背景颜色
+                fontSize: 20,   //条码字体大小
+                marginHRI: 10  //条码字体距条码中心的高度
+            });
+            $('#Print_Staff').html(data.stampUserName);                           //打印人
+            $('#Print_Date').html(data.stampTime);                            //打印时间
+
+            setPrintFormat();
+        });
+    }
+
+    //生成打印格式
+    function setPrintFormat(){
+        'use strict';
+        var divContent = $('#modTagCon').html();
+        var data = "data:image/svg+xml," +
+                "<svg xmlns='http://www.w3.org/2000/svg' width='110mm' height='110mm' style='margin-bottom:5mm'>" +
+                "<foreignObject width='100%' height='100%'>" +
+                "<div xmlns='http://www.w3.org/1999/xhtml' style='font-size:16px;font-family:Helvetica'>" +
+                divContent +
+                "</div>" +
+                "</foreignObject>" +
+                "</svg>";
+        var img = new Image();
+        img.src = data;
+        $('#TagCon').append(img);
+        document.getElementById('TagCon').appendChild(img);
+        img.setAttribute("id","modTagImg");
+
+        $('#modTag').attr('hidden','hidden');
+        $('#TagCon').removeAttr('hidden');
+    }
+
+    //根据名称获取Url中某个参数的值
+    function GetUrlParam(pname) {
+        var reg = new RegExp("(^|&)" + pname + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]);
+        return null;
+    }
+</script>
+</body>
+</html>

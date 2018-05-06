@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SelectRecipe</title>
+</head>
+<body>
+    <div class="form-group" style="margin-top:10px;">
+        <div class="col-sm-10" style="padding-right: 0;">
+            <input type="text" class="form-control" id="txtPSCcontent" placeholder="多条件请以 逗号 或 空格 分开">
+        </div>
+        <div class="col-sm-2" style="padding-left: 0;text-align: right;">
+            <button type="button" id="PSCSearch" class="btn btn-custom"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+    </div>
+    <div class="bootstrap-table table col-sm-12" style="margin-top: 8px;">
+            <div class="table-responsive">
+                <table id="Recipe_Select_Table" class="bootstrap-table table"
+                       data-toggle="table"
+                       data-click-to-select="true"
+                       data-striped="true"
+                       data-height="355">
+                    <thead>
+                    <tr>
+                        <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                        <th data-field="id" data-visible="false"></th>
+                        <th data-field="code" data-align="left" data-halign="center">代码</th>
+                        <th data-field="name" data-align="left" data-halign="center">名称</th>
+                        <th data-field="rpTypeName" data-align="left" data-halign="center">类型</th>
+                        <th data-field="rpTypeId" data-visible="false" data-align="left" data-halign="center">类型</th>
+                        <th data-field="version" data-align="left" data-halign="center">版本</th>
+                        <th data-field="statusName" data-align="left" data-halign="center">状态</th>
+                        <th data-field="quantity" data-align="right" data-halign="center">批量</th>
+                        <th data-field="symbol" data-align="left" data-halign="center">单位</th>
+                        <th data-field="minQuantity" data-align="right" data-halign="center">最小批量</th>
+                        <th data-field="maxQuantity" data-align="right" data-halign="center">最大批量</th>
+                        <!--<th data-field="description">备注</th>-->
+                    </thead>
+                </table>
+            </div>
+        </div>
+    <div class="form-group col-sm-12" style="margin-top: 10px;">
+        <div class="col-sm-6" style="text-align: right">
+            <button type="button" id="Recipe_Info_Confirm" class="btn btn-custom">确定</button>
+        </div>
+        <div class="col-sm-6">
+            <button type="button" id="Recipe_Info_Cancel" class="btn btn-custom close-layer">取消</button>
+        </div>
+    </div>
+</body>
+</html>

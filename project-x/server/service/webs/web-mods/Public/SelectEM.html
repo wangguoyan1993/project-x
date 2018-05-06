@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择设备</title>
+</head>
+<body>
+<div class="form-group" style="margin-top: 10px;">
+    <div class="col-sm-9">
+        <input type="text" class="form-control" id="emSearchInput" placeholder="多条件请以 逗号 或 空格 分开">
+    </div>
+    <div class="col-sm-3">
+        <button type="button" id="btnEmSearch" class="btn btn-custom"><span class="glyphicon glyphicon-search"></span></button>
+    </div>
+</div>
+<!--{"errorCode":0,"data":[{"id":114,"no":"test1","name":"机器1号","model":null,"typeId":1,"typeName":"称具","typeDescription":null,-->
+<!--"statusId":1,"statusName":"运行中","property":"58ABDDFA25A08625BC80E0A9","propertyValue":null,"barcodeId":0,"barcode":null,-->
+<!--"workcenterId":0,"available":0,"precision":null,"validDate":null,"minimumRange":null,"ultimateRange":null,"selfCheck":null,-->
+<!--"unit":null,"workcenterCode":null,"workcenterName":null,"workcenterDesc":null},-->
+<!--{"id":115,"no":"test2","name":"机器2号","model":null,"typeId":1,"typeName":"称具","typeDescription":null,"statusId":2,-->
+<!--"statusName":"待清洁","property":"58AC078625A0862F00EC572B","propertyValue":null,"barcodeId":0,"barcode":null,"workcenterId":0,-->
+<!--"available":0,"precision":null,"validDate":null,"minimumRange":null,"ultimateRange":null,"selfCheck":null,"unit":null,-->
+<!--"workcenterCode":null,"workcenterName":null,"workcenterDesc":null},-->
+<!--{"id":116,"no":"testnew","name":"勿修改","model":null,-->
+<!--"typeId":1,"typeName":"称具","typeDescription":null,"statusId":2,"statusName":"待清洁","property":"58AC086325A0862C708B17F9",-->
+<!--"propertyValue":null,"barcodeId":0,"barcode":null,"workcenterId":0,"available":0,"precision":null,"validDate":null,-->
+<!--"minimumRange":null,"ultimateRange":null,"selfCheck":null,"unit":null,"workcenterCode":null,"workcenterName":null,"workcenterDesc":null},-->
+<!--{"id":117,"no":"testnew1","name":"勿修改","model":null,"typeId":1,"typeName":"称具","typeDescription":null,"statusId":2,"statusName":"待清洁",-->
+<!--"property":"58AC096A25A0861B041A75CE","propertyValue":null,"barcodeId":0,"barcode":null,"workcenterId":0,"available":0,"precision":null,-->
+<!--"validDate":null,"minimumRange":null,"ultimateRange":null,"selfCheck":null,"unit":null,"workcenterCode":null,"workcenterName":null,"workcenterDesc":null},-->
+<!--{"id":118,"no":"testnew2","name":"勿修改","model":null,"typeId":1,"typeName":"称具","typeDescription":null,"statusId":2,"statusName":"待清洁",-->
+<!--"property":"58AC09BB25A0860DACDB482D","propertyValue":null,"barcodeId":0,"barcode":null,"workcenterId":0,"available":0,"precision":null,-->
+<!--"validDate":null,"minimumRange":null,"ultimateRange":null,"selfCheck":null,"unit":null,"workcenterCode":null,"workcenterName":null,-->
+<!--"workcenterDesc":null}]}-->
+<div class="bootstrap-table table col-sm-12" style="margin-top: 8px;">
+    <div class="table-responsive">
+        <table id="SelectEMTable" data-toggle="table"
+               data-click-to-select="true"
+               data-striped="true"
+               data-unique-id="id"
+               data-height="300">
+            <thead>
+            <tr>
+                <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                <th data-field="id" data-visible="false"></th>
+                <th data-field="code" data-align="left" data-halign="center">代码</th>
+                <th data-field="name" data-align="left" data-halign="center">名称</th>
+                <th data-field="classId" data-visible="false">类型</th>
+                <th data-field="classCodeName" data-align="left" data-halign="center">类型</th>
+                <th data-field="verStatusName" data-align="left" data-halign="center">状态</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<div class="form-group col-sm-12" style="margin-top: 10px;">
+    <div class="col-xs-6" style="text-align: right">
+        <button type="button" id="btnEMSelectOK" class="btn btn-custom">确定</button>
+    </div>
+    <div class="col-xs-6">
+        <button type="button" id="btnEMSelectCancel" class="btn btn-custom">取消</button>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双人带键盘签名</title>
+    <style>
+        #keyboardBox{
+            overflow: hidden;
+            background-color: #eee;
+            padding-top: 10px;
+        }
+        #keyboard-ins {
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+            width: 675px;
+            margin: 0 auto;
+        }
+        #keyboard-ins li {
+            float: left;
+            margin: 0 5px 5px 0;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #f9f9f9;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+        .capslock, .tab, .left-shift {
+            clear: left;
+        }
+        #keyboard-ins .tab, #keyboard-ins .backspace {
+            width: 80px;
+        }
+        #keyboard-ins .capslock {
+            width: 90px;
+        }
+        #keyboard-ins .return {
+            width: 77px;
+        }
+        #keyboard-ins .left-shift {
+            width: 100px;
+        }
+        #keyboard-ins .right-shift {
+            width: 113px;
+        }
+        .lastitem {
+            margin-right: 0;
+        }
+        .uppercase {
+            text-transform: uppercase;
+        }
+        #keyboard-ins .space {
+            clear: left;
+            width: 670px;
+        }
+        .on {
+            display: none;
+        }
+        #keyboard-ins li:hover {
+            position: relative;
+            top: 1px;
+            left: 1px;
+            border-color: #e5e5e5;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="col-xs-6" style="padding:5px">
+            <div class="panel panel-default" style="margin: 5px 0px">
+                <div class= "panel-heading" style="background-color: white">
+                    <span class="label label-custom" style="font-size: 17px">签名一</span>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputSigMeaning" class="col-xs-3 control-label" style="color: #333">签名含义</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="inputSigMeaning" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectUG1" class="col-xs-3 control-label" style="color: #333">签名组</label>
+                            <div class="col-xs-9">
+                                <select id="selectUG1" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectUsers1" class="col-xs-3 control-label" style="color: #333">签名人</label>
+                            <div class="col-xs-9">
+                                <select id="selectUsers1" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPWD1" class="col-xs-3 control-label" style="color: #333">密码</label>
+                            <div class="col-xs-9">
+                                <input type="password" class="form-control need-keyboard" placeholder="请输入密码" id="inputPWD1" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputComment1" class="col-xs-3 control-label" style="color: #333">备注</label>
+                            <div class="col-xs-9">
+                                <textarea  class="form-control need-keyboard" id="inputComment1" placeholder="备注" rows="2" style="margin-top: 0px;resize: none"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0px">
+                            <div class="col-xs-3 col-xs-offset-3">
+                                <button type="button" id="btnSignFirst" class="btn btn-custom"> 签 名 </button>
+                            </div>
+                            <div class="col-xs-3">
+                                <button type="button" disabled id="btnSignFirstReset" class="btn btn-danger"> 重 置 </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <div class="col-xs-6" style="padding:5px">
+            <div class="panel panel-default" style="margin: 5px 0px">
+                <div class= "panel-heading" style="background-color: white">
+                    <span class="label label-custom" style="font-size: 17px">签名二</span>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputSigMeaning2" class="col-xs-3 control-label" style="color: #333">签名含义</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="inputSigMeaning2" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectUG2" class="col-xs-3 control-label" style="color: #333">签名组</label>
+                            <div class="col-xs-9">
+                                <select id="selectUG2" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectUsers2" class="col-xs-3 control-label" style="color: #333">签名人</label>
+                            <div class="col-xs-9">
+                                <select id="selectUsers2" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPWD2" class="col-xs-3 control-label" style="color: #333">密码</label>
+                            <div class="col-xs-9">
+                                <input type="password" class="form-control need-keyboard" placeholder="请输入密码" id="inputPWD2" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputComment2" class="col-xs-3 control-label" style="color: #333">备注</label>
+                            <div class="col-xs-9">
+                                <textarea  class="form-control need-keyboard" id="inputComment2" placeholder="备注" rows="2" style="margin-top: 0px;resize: none"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0px">
+                            <div class="col-xs-3 col-xs-offset-3">
+                                <button type="button" id="btnSignOk" disabled class="btn btn-custom"> 签 名 </button>
+                            </div>
+                            <div class="col-xs-3">
+                                <button type="button" id="btnSignCancel" class="btn btn-danger"> 关闭 </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <div class="col-xs-12" id="keyboardBox">
+        <ul id="keyboard-ins">
+
+            <li class="symbol"><span class="off">`</span><span class="on">~</span></li>
+
+            <li class="symbol"><span class="off">1</span><span class="on">!</span></li>
+
+            <li class="symbol"><span class="off">2</span><span class="on">@</span></li>
+
+            <li class="symbol"><span class="off">3</span><span class="on">#</span></li>
+
+            <li class="symbol"><span class="off">4</span><span class="on">$</span></li>
+
+            <li class="symbol"><span class="off">5</span><span class="on">%</span></li>
+
+            <li class="symbol"><span class="off">6</span><span class="on">^</span></li>
+
+            <li class="symbol"><span class="off">7</span><span class="on">&amp;</span></li>
+
+            <li class="symbol"><span class="off">8</span><span class="on">*</span></li>
+
+            <li class="symbol"><span class="off">9</span><span class="on">(</span></li>
+
+            <li class="symbol"><span class="off">0</span><span class="on">)</span></li>
+
+            <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
+
+            <li class="symbol"><span class="off">=</span><span class="on">+</span></li>
+
+            <li class="backspace lastitem">backspace</li>
+
+            <li class="tab">tab</li>
+
+            <li class="letter">q</li>
+
+            <li class="letter">w</li>
+
+            <li class="letter">e</li>
+
+            <li class="letter">r</li>
+
+            <li class="letter">t</li>
+
+            <li class="letter">y</li>
+
+            <li class="letter">u</li>
+
+            <li class="letter">i</li>
+
+            <li class="letter">o</li>
+
+            <li class="letter">p</li>
+
+            <li class="symbol"><span class="off">[</span><span class="on">{</span></li>
+
+            <li class="symbol"><span class="off">]</span><span class="on">}</span></li>
+
+            <li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
+
+            <li class="capslock">caps lock</li>
+
+            <li class="letter">a</li>
+
+            <li class="letter">s</li>
+
+            <li class="letter">d</li>
+
+            <li class="letter">f</li>
+
+            <li class="letter">g</li>
+
+            <li class="letter">h</li>
+
+            <li class="letter">j</li>
+
+            <li class="letter">k</li>
+
+            <li class="letter">l</li>
+
+            <li class="symbol"><span class="off">;</span><span class="on">:</span></li>
+
+            <li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
+
+            <li class="return lastitem">return</li>
+
+            <li class="left-shift">shift</li>
+
+            <li class="letter">z</li>
+
+            <li class="letter">x</li>
+
+            <li class="letter">c</li>
+
+            <li class="letter">v</li>
+
+            <li class="letter">b</li>
+
+            <li class="letter">n</li>
+
+            <li class="letter">m</li>
+
+            <li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
+
+            <li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
+
+            <li class="symbol"><span class="off">/</span><span class="on">?</span></li>
+
+            <li class="right-shift lastitem">shift</li>
+
+            <li class="space lastitem">&nbsp;</li>
+
+        </ul>
+    </div>
+</body>
+</html>
