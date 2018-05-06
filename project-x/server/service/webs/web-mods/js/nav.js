@@ -1,7 +1,12 @@
 var navs = [{
-	"title" : "实验室管理主要功能",
+    "title" : "我的实验课程",
+    "icon" : "icon-text",
+    "href" : "page/user-course-list/user-courses.html",
+    "spread" : false
+},{
+	"title" : "实验课程浏览",
 	"icon" : "icon-computer",
-	"href" : "page/main.html",
+	"href" : "page/courses/courses.html",
 	"spread" : false
 },{
 	"title" : "实验室预约",
@@ -9,22 +14,17 @@ var navs = [{
 	"href" : "page/news/newsList.html",
 	"spread" : false
 },{
-	"title" : "实验课程浏览",
+	"title" : "实验教材教学",
 	"icon" : "icon-text",
 	"href" : "page/links/linksList.html",
 	"spread" : false
 },{
-	"title" : "实验教材教学",
+	"title" : "实验室设备",
 	"icon" : "&#xe61c;",
 	"href" : "page/404.html",
 	"spread" : false
 },{
-	"title" : "实验室设备",
-	"icon" : "&#xe631;",
-	"href" : "page/systemParameter/systemParameter.html",
-	"spread" : false
-},{
-	"title" : "虚拟仿真教学",
+	"title" : "实验教学视频",
 	"icon" : "&#xe61c;",
 	"href" : "",
 	"spread" : false,
@@ -50,6 +50,11 @@ var navs = [{
 	]
 },{
     "title" : "实验信息交流区",
+    "icon" : "&#xe631;",
+    "href" : "page/systemParameter/systemParameter.html",
+    "spread" : false
+},{
+    "title" : "实验室安全考试",
     "icon" : "&#xe631;",
     "href" : "page/systemParameter/systemParameter.html",
     "spread" : false

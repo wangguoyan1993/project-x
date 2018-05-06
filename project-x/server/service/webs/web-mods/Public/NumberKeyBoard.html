@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NumberKeyBoard</title>
+    <!--<link rel="stylesheet" href="../../webjar/bootstrap/3.3.7-1/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="../../webjar/plugins/font-awesome/css/font-awesome.min.css">-->
+    <style>
+        .Num-KeyBoard-Box{
+            width: 197px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .num-input{
+            width: 190px;
+            text-align: center;
+            margin:0 auto;
+            font-size: 20px;
+            font-family: 'Adobe 黑体 Std R';
+            font-weight: bold;
+        }
+
+        .KeyBoard{
+            width:195px;
+            margin-left:5px;
+            padding-left:2px;
+        }
+
+        .NumBtn{
+            width: 55px;
+            height: 46px;
+            margin-top: 3px;
+            font-size:18px;
+        }
+    </style>
+
+    <!--<script type="text/javascript" src="../../webjar/jquery/3.1.1/jquery.min.js"></script>-->
+</head>
+<body>
+<div class="Num-KeyBoard-Box" numType="box">
+    <input type="text" numType="input" class="form-control num-input" readonly="readonly">
+    <div class="KeyBoard">
+        <div class="NumBtn-Con">
+            <button class="NumBtn" num="7">7</button>
+            <button class="NumBtn" num="8">8</button>
+            <button class="NumBtn" num="9">9</button>
+        </div>
+        <div class="NumBtn-Con">
+            <button class="NumBtn" num="4">4</button>
+            <button class="NumBtn" num="5">5</button>
+            <button class="NumBtn" num="6">6</button>
+        </div>
+        <div class="NumBtn-Con">
+            <button class="NumBtn" num="1">1</button>
+            <button class="NumBtn" num="2">2</button>
+            <button class="NumBtn" num="3">3</button>
+        </div>
+        <div class="NumBtn-Con">
+            <button class="NumBtn" num="POT">.</button>
+            <button class="NumBtn" num="0">0</button>
+            <button class="NumBtn" num="BKS">←</button>
+        </div>
+        <div class="NumBtn-Con" style="margin-top:6px;">
+            <button id="Num-KeyBoard-Confirm" type="button" class="btn btn-custom" style="width:60px;display:inline;margin-left:15px;">确认</button>
+            <button id="Num-KeyBoard-Cancel" type="button" class="btn btn-custom" style="width:60px;display:inline;margin-left:20px;">取消</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

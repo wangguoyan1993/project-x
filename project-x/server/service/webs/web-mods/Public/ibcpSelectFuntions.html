@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择新增状态流转项方法</title>
+</head>
+<body>
+<form class="form-horizontal" style="padding: 10px">
+    <!--<div class="form-group" style="width: 800px;display:none;">-->
+        <!--<div class="col-sm-9">-->
+            <!--<input type="text" class="form-control" id="txtVFACondition" placeholder="多条件请以 逗号 或 空格 分开">-->
+        <!--</div>-->
+        <!--<div class="col-sm-3">-->
+            <!--<button type="button" id="btnVFASearch" class="btn btn-custom" style="width: 100%" onclick="VFASearch()">搜索</button>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="form-group">
+        <div class="col-sm-12">
+            <!--style="padding-left: 10px;padding-right: 10px"-->
+            <div class="bootstrap-table table">
+                <div class="table-responsive">
+                    <table id="EM_SG_Method_Table" data-toggle="table"
+                           data-click-to-select="true"
+                           data-striped="true"
+                           data-height="300"
+                           data-row-style="rowStyle"
+                           data-cell-style="cellStyle"
+                           data-unique-id="id">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                            <th data-field="id" data-visible="false">[方法id]</th>
+                            <th data-field="typeId" data-visible="false">[种类id]</th>
+                            <th data-field="code" data-align="left" data-halign="center">方法代码</th>
+                            <th data-field="name" data-align="left" data-halign="center">方法名称</th>
+                            <th data-field="description" data-align="left" data-halign="center">方法描述</th>
+                            <th data-field="typeCode" data-align="left" data-halign="center">类别代码</th>
+                            <th data-field="typeName" data-align="left" data-halign="center">类别名称</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" style = "width: 800px;margin-bottom: 0px">
+        <div class="col-sm-6" style="text-align: right">
+            <button type="button" id="EM_SG_Method_Confirm_Btn" class="btn btn-custom">确定</button>
+        </div>
+        <div class="col-sm-6">
+            <button type="button" id="EM_SG_Method_Cancel_Btn" class="btn btn-custom">取消</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

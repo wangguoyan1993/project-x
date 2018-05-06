@@ -1,0 +1,17 @@
+/**
+ * Title    : 统一的样式规范文件
+ * Desc     : 本文件用于定义产品普遍使用到的DOM元素的，通用的基本的样式
+ * Copyright: Shanghai Batchsight Pharmaceutical Technologies, Inc. Copyright(c) 2018
+ * version  : 1.0
+ * Histroy  : 2018/01/01 by qijialin 创建
+ *
+ */
+
+
+/**
+ * 所有的条码输入类 扫描或输入类型自动 转为大写 模式
+ */
+.barcode-input{
+    /* 将文本转为大写 */
+    text-transform: uppercase;
+}
