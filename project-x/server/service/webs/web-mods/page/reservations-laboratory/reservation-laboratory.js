@@ -1,22 +1,22 @@
 /*
 	@Author: MaCanglian
 	@Time: 2018-05
-	@Tittle: courses
-	@Description: 实验课程浏览区
+	@Tittle: reservation
+	@Description: 预约实验室
 */
 
 //加载页面时运行
 $(function () {
-    coursesMods.init();
+    reservationMods.init();
 });
 
 //窗口自适应
 $(window).resize(function(){
-    coursesMods.pageSize();
+    reservationMods.pageSize();
 });
 
-//实验课程显示区域功能
-let coursesMods = function () {
+//实验室列表显示区域功能
+let reservationMods = function () {
     //加载数据
     let _initData = () => {
         //测试数据
@@ -62,7 +62,7 @@ let coursesMods = function () {
         //表格区域高度
         $('#table').height($(window).height() - $('#search_area').height() - 40);
         // //表格高度
-        // $('#courses_table').height($('#table').height() - $('.panel-heading').height() - 30);
+        // $('#laboratory_table').height($('#table').height() - $('.panel-heading').height() - 30);
     };
 
     //注册事件
@@ -77,10 +77,9 @@ let coursesMods = function () {
     let _loadData = () => {
         //搜索条件
         let param = {};
-        param.code = $('#course_code').val();
-        param.name = $('#course_name').val();
-        param.college = $('#course_college').val();
-        param.teacher = $('#course_teacher').val();
+        param.code = $('#laboratory_code').val();
+        param.name = $('#laboratory_name').val();
+        param.college = $('#laboratory_college').val();
         //调用接口搜索加载表格
     };
     let init =  () => {

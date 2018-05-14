@@ -33,6 +33,7 @@ let loginMod = (function(){
             },
             // dataType : 'json',
             success : function(data, textStatus){
+                console.log(data);
                 if(data.sig === 0){
                     window.location = data.url;
                 }else{
