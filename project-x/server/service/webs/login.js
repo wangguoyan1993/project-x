@@ -2,7 +2,7 @@
  * Title    : 登录页面js
  * Desc     : 提供登录逻辑
  * version  : 1.0
- * Histroy  : 2018/4/10 by Mr.Wang
+ * History  : 2018/4/10 by Mr.Wang
  *
  */
 
