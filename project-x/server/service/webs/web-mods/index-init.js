@@ -54,10 +54,51 @@ let initIndexMod = (function(){
     }
 
     /**
+     * 获取服务器时间
+     * @param callBack
+     */
+    function _getTime(callBack) {
+        let timePath = `${window.location.protocol}//${window.location.host}/api/v1/login/timestamp`;
+
+        $.ajax({
+            url : timePath,
+            type : 'GET',
+            async : true,
+            data : '',
+            // dataType : 'json',
+            success : function(data, textStatus){
+                if(typeof(callBack) === 'function'){
+                    callBack(data);
+                }
+            },
+            error : function(req, textStatus, errorThrown){
+                console.log(textStatus);
+            }
+        })
+    }
+
+    /**
+     * 循环调用刷新时间
+     */
+    function _timeInLoop() {
+        let timeLoop = setInterval(()=>{
+            _getTime((data)=>{
+                let sig = data.sig *= 1;
+                if(sig === 0){
+
+                }else{
+
+                }
+            });
+        }, 1000);
+    }
+
+    /**
      * 初始化执行方法
      */
     function init() {
         _showUserName();
+        _timeInLoop();
     }
 
     return {

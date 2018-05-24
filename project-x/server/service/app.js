@@ -9,6 +9,7 @@ let index = require('./routes/index');
 let users = require('./routes/users');
 let queryUsers = require('./routes/query-users/query-users.js');    //用户信息
 let loginAuthority = require('./routes/authority/login.js');        //登录权限
+let timerManager = require('./routes/timer');                       //时间类
 
 let app = express();
 
@@ -30,6 +31,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/api/v1/queryUsers', queryUsers);      //用户信息
 app.use('/api/v1/login', loginAuthority);       //登录
+app.use('/api/v1/timeManage', timerManager);    //时间相关接口
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

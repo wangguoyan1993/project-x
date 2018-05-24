@@ -16,7 +16,9 @@ let print = require('../plugins/print-log');
 let cookie = require('cookie-parser');
 let session = require('express-session');
 let uuId = require('node-uuid');
-let cache = require('../plugins/cache-manager');
+
+const NodeCache = require('node-cache');
+const myCache = new NodeCache();
 
 /**
  * 检查用户账号是否存在于数据库表中
@@ -60,31 +62,20 @@ function loginMethod(req, res) {
                 let userId = result[0].id;                      //用户id
                 let userType = result[0].type;                  //用户类型
                 if(password === relPassword){
-                    // let _uuid = uuId.v1();
+                    let uuid = uuId.v1();
 
-                    //定义cookie，并将uuid存入cookie对应当前用户的账号中
-                    // let _cookie = {};
-                    // _cookie[`${account}`] = _uuid;
-                    // res.cookie('login', _uuid, {maxAge : 60000});
-
-                    //将登录信息写入缓存
-                    // cache.setLogin(account.toString(), _uuid);
-
-                    //设置session
-                    // app.use(session({
-                    //     secret : '123456',
-                    //     name : 'login',
-                    //     cookie : {maxAge : 1000000},
-                    //     resave : false,
-                    //     saveUninitialized : true
-                    // }));
+                    //存储10个小时的登录缓存信息
+                    myCache.set(account.toString(), {uuid : uuid}, 60000);
+                    //记录登录cookie
+                    res.cookie('account', {account : account.toString(), uuid : uuid}, {maxAge : 60000});
 
                     res.send({
                         url : 'http://localhost:8080/web-mods/index.html',
                         sig : 0,
                         userName : userName,
                         userId : userId,
-                        userType : userType
+                        userType : userType,
+                        uuid : uuid
                     });
                 }else{
                     res.send({
@@ -101,8 +92,7 @@ function loginMethod(req, res) {
             })
         }
     });
-
-};
+}
 
 /**
  * 修改用户密码
@@ -132,6 +122,60 @@ function updateUserPassword(req, res){
 }
 
 /**
+ * 登出系统方法
+ * @param req
+ * @param res
+ */
+function logoutMethod(req, res){
+    let account = req.body['account'];
+    //删除登录者信息缓存
+    myCache.del(account.toString(), (err, count)=>{
+        //返回状态
+        res.send({
+            sig : 0
+        });
+    });
+}
+
+
+/**
+ * 验证是否登录
+ * @param req
+ * @param callBack
+ */
+function validLogin(req, callBack){
+    //获取cookie中的登录信息
+    let cookie = req.cookies.account;
+    if(cookie){
+        let account = cookie.account;
+        let uuid = cookie.uuid;
+        if(account && uuid){
+            myCache.get(account, (err, value)=>{
+                if(value){
+                    if(value.uuid === uuid){
+                        callBack(true);
+                        return;
+                    }
+                }
+
+                callBack(false);
+            });
+        }else{
+            callBack(false);
+        }
+    }
+}
+
+/**
+ * 获取当前时区格式化时间
+ * @returns {string}
+ */
+function getTimestamp(){
+    let date = new Date();
+    return date.toLocaleDateString();
+}
+
+/**
  * 登录接口
  */
 router.post('/login', (req, res)=>{
@@ -143,6 +187,32 @@ router.post('/login', (req, res)=>{
  */
 router.post('/updatePassword', (req, res)=>{
     updateUserPassword(req, res);
+});
+
+/**
+ * 登出系统接口
+ */
+router.post('/logout', (req, res)=>{
+    logoutMethod(req, res);
+});
+
+/**
+ * 获取时间戳
+ */
+router.get('/timestamp', (req, res)=>{
+    validLogin(req, (ckResult)=>{
+        if(ckResult){
+            //获取时间戳
+            let timestamp = getTimestamp();
+            //返回
+            res.send({
+                sig : 0,
+                timestamp : timestamp
+            });
+        }else{
+            res.redirect('http://localhost:8080');
+        }
+    });
 });
 
 module.exports = router;

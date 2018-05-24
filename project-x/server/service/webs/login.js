@@ -36,6 +36,7 @@ let loginMod = (function(){
                 console.log(data);
                 if(data.sig === 0){
                     window.location = `${data.url}?userName=${data.userName}&userType=${data.userType}&account=${userAccount}`;
+                    //将登录信息写入cookie中
                 }else{
                     alert(data.error);
                 }
