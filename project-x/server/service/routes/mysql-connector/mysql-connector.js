@@ -1,13 +1,18 @@
 /**
  * Title    : mysql数据库连接器
  * Desc     :
- * version  : 1.0
+ * version  : 0.1
  * Histroy  : 2018/4/10 by Mr.Wang
  *
  */
 let mysql = require('mysql');
 let print = require('../plugins/print-log.js');
 
+/**
+ * 连接数据库并查询
+ * @param sql
+ * @param callback
+ */
 let queryDB = (sql, callback) => {
     try{
         let connection = mysql.createConnection({
@@ -31,7 +36,9 @@ let queryDB = (sql, callback) => {
                 print.error(`mySQL 数据库操作错误！ 执行语句：`);
                 print.error(sql);
                 print.warn(`-----------------------------------------------------------`);
-                return false;
+                if(typeof(callback) === 'function'){
+                    callback(null);
+                }
             }else{
                 if(typeof(callback) === 'function'){
                     callback(result);
@@ -41,7 +48,8 @@ let queryDB = (sql, callback) => {
 
         connection.end();
 
-    }catch(e){
+    }
+    catch(e){
         print.error(e);
     }
 };

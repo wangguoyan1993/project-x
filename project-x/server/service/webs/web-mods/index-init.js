@@ -1,0 +1,71 @@
+/**
+ * Title    : 处理主页框架初始化js
+ * Desc     : 补充额外功能
+ * version  : 0.1
+ * History  : 2018/5/24 by Mr.Wang
+ *
+ */
+
+/**
+ * 主页初始化框架模块
+ */
+let initIndexMod = (function(){
+    //缓存页面用户名存放控件
+    let $userNameBox = $('#user_name_welcome');
+    //右上角用户名管理按钮显示控件
+    let $userNameManage = $('#user_name_manage');
+
+    //定义用户种类映射
+    let _userTypeCollection = {
+        1 : '管理员',
+        2 : '老师',
+        3 : '同学'
+    };
+
+    /**
+     * 获取地址中的参数
+     * @param pname
+     * @returns {*}
+     */
+    function _getUrlParam(pname) {
+        let reg = new RegExp("(^|&)" + pname + "=([^&]*)(&|$)");
+        let r = window.location.search.substr(1).match(reg);
+        if (r) return decodeURI(r[2]);
+        return null;
+    }
+
+    /**
+     * 显示用户名
+     * @private
+     */
+    function _showUserName() {
+        let userName = _getUrlParam('userName');
+        let type = _getUrlParam('userType');
+        let account = _getUrlParam('account');
+        if(userName){
+            let userNameText = `${userName} ${_userTypeCollection[type]}`;
+            //左上角显示欢迎信息
+            $userNameBox.html(userNameText);
+            //右上角显示用户管理信息
+            $userNameManage.html(userName);
+            //存储账号信息
+            $userNameManage.attr('user-account', account);
+        }
+    }
+
+    /**
+     * 初始化执行方法
+     */
+    function init() {
+        _showUserName();
+    }
+
+    return {
+        init : init
+    }
+})();
+
+
+$(function(){
+    initIndexMod.init();
+});

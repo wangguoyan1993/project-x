@@ -1,7 +1,7 @@
 /**
  * Title    : 登录页面js
  * Desc     : 提供登录逻辑
- * version  : 1.0
+ * version  : 0.1
  * History  : 2018/4/10 by Mr.Wang
  *
  */
@@ -15,7 +15,7 @@ let loginMod = (function(){
     /**
      * 登录方法
      */
-    let _login = () => {
+    function _login() {
         let userAccount = $('#user_account').val();
         let password = $('#password').val();
 
@@ -35,7 +35,7 @@ let loginMod = (function(){
             success : function(data, textStatus){
                 console.log(data);
                 if(data.sig === 0){
-                    window.location = data.url;
+                    window.location = `${data.url}?userName=${data.userName}&userType=${data.userType}&account=${userAccount}`;
                 }else{
                     alert(data.error);
                 }
@@ -44,17 +44,17 @@ let loginMod = (function(){
                 console.log(textStatus);
             }
         });
-    };
+    }
 
     /**
      * 初始化登录界面
      */
-    let init = () => {
+    function init() {
         //登录按钮点击事件
         $('#sign_in').on('click', function(){
             _login();
         });
-    };
+    }
 
     return {
         init : init

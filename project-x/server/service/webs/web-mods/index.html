@@ -61,7 +61,7 @@
 					<li class="layui-nav-item" pc>
 						<a href="javascript:;">
 							<img src="images/student.jpg" class="layui-circle" width="35" height="35">
-							<cite>管理员</cite>
+							<cite id="user_name_manage">管理员</cite>
 						</a>
 						<dl class="layui-nav-child">
 							<dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
@@ -76,7 +76,7 @@
 		<div class="layui-side layui-bg-black">
 			<div class="user-photo">
 				<a class="img" title="我的头像" ><img src="images/student.jpg"></a>
-				<p>你好！<span class="userName">xx同学</span>, 欢迎登录</p>
+				<p>你好！<span id="user_name_welcome" class="userName">xx同学</span>, 欢迎登录</p>
 			</div>
 			<div class="navBar layui-side-scroll"></div>
 		</div>
@@ -99,5 +99,7 @@
 	<script type="text/javascript" src="js/nav.js"></script>
 	<script type="text/javascript" src="js/leftNav.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="../webjar/jquery/3.1.1/jquery.js"></script>
+	<script type="text/javascript" src="index-init.js"></script>
 </body>
 </html>
