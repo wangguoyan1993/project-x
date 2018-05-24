@@ -167,6 +167,9 @@ function validLogin(req, callBack){
             callBack(false);
         }
     }
+    else{
+        callBack(false);
+    }
 }
 
 /**

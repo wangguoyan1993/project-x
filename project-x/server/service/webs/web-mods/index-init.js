@@ -87,7 +87,7 @@ let initIndexMod = (function(){
                 if(sig === 0){
 
                 }else{
-
+                    window.location = `http://localhost:8080`;
                 }
             });
         }, 1000);
