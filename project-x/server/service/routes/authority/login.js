@@ -65,9 +65,9 @@ function loginMethod(req, res) {
                     let uuid = uuId.v1();
 
                     //存储10个小时的登录缓存信息
-                    myCache.set(account.toString(), {uuid : uuid}, 60000);
+                    myCache.set(account.toString(), {uuid : uuid}, 6000000);
                     //记录登录cookie
-                    res.cookie('account', {account : account.toString(), uuid : uuid}, {maxAge : 60000});
+                    res.cookie('account', {account : account.toString(), uuid : uuid}, {maxAge : 6000000});
 
                     res.send({
                         url : 'http://localhost:8080/web-mods/index.html',
