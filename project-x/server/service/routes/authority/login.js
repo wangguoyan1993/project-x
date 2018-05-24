@@ -155,6 +155,9 @@ function validLogin(req, callBack){
                     if(value.uuid === uuid){
                         callBack(true);
                         return;
+                    }else{
+                        callBack(false);
+                        return;
                     }
                 }
 
