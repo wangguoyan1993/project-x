@@ -6,6 +6,9 @@
  *
  */
 
+//当前登录用户
+window.top.user = {};
+
 /**
  * 主页初始化框架模块
  */
@@ -40,7 +43,7 @@ let initIndexMod = (function(){
      */
     function _showUserName() {
         let userName = _getUrlParam('userName');
-        let type = _getUrlParam('userType');
+        let type = _getUrlParam('userType') * 1;
         let account = _getUrlParam('account');
         if(userName){
             let userNameText = `${userName} ${_userTypeCollection[type]}`;
@@ -50,6 +53,11 @@ let initIndexMod = (function(){
             $userNameManage.html(userName);
             //存储账号信息
             $userNameManage.attr('user-account', account);
+
+            //缓存当前用户信息
+            window.top.user.name = userName;
+            window.top.user.account = account;
+            window.top.user.type = type;
         }
     }
 
