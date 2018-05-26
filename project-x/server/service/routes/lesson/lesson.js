@@ -28,7 +28,7 @@ function queryAllLesson(req, res){
     conDB(sql, (result)=>{
         if(result.length > 0){
             res.send({
-                sig : 0,
+                errorCode : 0,
                 data : result
             });
         }

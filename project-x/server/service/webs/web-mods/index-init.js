@@ -45,6 +45,7 @@ let initIndexMod = (function(){
         let userName = _getUrlParam('userName');
         let type = _getUrlParam('userType') * 1;
         let account = _getUrlParam('account');
+        let uid = _getUrlParam('uid');
         if(userName){
             let userNameText = `${userName} ${_userTypeCollection[type]}`;
             //左上角显示欢迎信息
@@ -58,6 +59,7 @@ let initIndexMod = (function(){
             window.top.user.name = userName;
             window.top.user.account = account;
             window.top.user.type = type;
+            window.top.user.uid = uid;
         }
     }
 

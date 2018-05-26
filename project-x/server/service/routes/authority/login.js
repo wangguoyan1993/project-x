@@ -112,7 +112,8 @@ function updateUserPassword(req, res){
             let upSql = `UPDATE main password='${newPassword}' WHERE account=${account}`;
             conDB(upSql, ()=>{
                 res.send({
-                    sig : 0
+                    errorCode : 0,
+                    data : '修改成功！'
                 });
             });
         }
@@ -130,7 +131,8 @@ function logoutMethod(req, res){
     myCache.del(account.toString(), (err, count)=>{
         //返回状态
         res.send({
-            sig : 0
+            errorCode : 0,
+            data : '登出成功！'
         });
     });
 }
@@ -210,7 +212,7 @@ router.get('/timestamp', (req, res)=>{
             let timestamp = getTimestamp();
             //返回
             res.send({
-                sig : 0,
+                errorCode : 0,
                 timestamp : timestamp
             });
         }else{
