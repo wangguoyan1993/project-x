@@ -33,6 +33,41 @@ CREATE TABLE `main` (
 
 insert  into `main`(`id`,`name`,`type`,`number`,`password`) values (1,'张三',1,12405008,'123'),(2,'李四',1,16405008,'qwe123'),(3,'王五',2,11407001,'111222333'),(4,'汪国岩',3,19930525,'19930525'),(5,'王彦春',2,123111,'123'),(6,'李云',2,123123,'111'),(7,'王建',2,111222,'1231'),(8,'吴松',2,1233112,'11122');
 
+/*Table structure for table `t_lab` */
+
+DROP TABLE IF EXISTS `t_lab`;
+
+CREATE TABLE `t_lab` (
+  `id` int(8) NOT NULL AUTO_INCREMENT COMMENT '实验室id',
+  `name` varchar(32) NOT NULL COMMENT '实验室名称',
+  `code` varchar(16) NOT NULL COMMENT '实验室代码',
+  `collage` varchar(64) NOT NULL COMMENT '所属学院',
+  `place` varchar(64) NOT NULL COMMENT '地点',
+  `time` varchar(128) DEFAULT NULL COMMENT '上课时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+/*Data for the table `t_lab` */
+
+insert  into `t_lab`(`id`,`name`,`code`,`collage`,`place`,`time`) values (1,'	惠斯通电桥实验室','	B1400401','	物理科学与技术学院','	崇理楼401','周二，1-3节；周三，5-7节'),(2,'材料化学实验室','	B1400322','环境工程与化学学院','	化明楼322','周三，1-3节；周五，1-3节'),(3,'微生物实验室','	B1400208','生命科学与技术学院','生命学院208','周三，1-3节；周五，1-3节');
+
+/*Table structure for table `t_lab_order` */
+
+DROP TABLE IF EXISTS `t_lab_order`;
+
+CREATE TABLE `t_lab_order` (
+  `lab_id` int(8) DEFAULT NULL,
+  `uid` int(8) DEFAULT NULL,
+  `start_time` varchar(16) DEFAULT NULL,
+  `end_time` varchar(16) DEFAULT NULL,
+  KEY `uid` (`uid`),
+  KEY `lab_id` (`lab_id`),
+  CONSTRAINT `lab_id` FOREIGN KEY (`lab_id`) REFERENCES `t_lab` (`id`),
+  CONSTRAINT `uid` FOREIGN KEY (`uid`) REFERENCES `main` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `t_lab_order` */
+
 /*Table structure for table `t_lesson` */
 
 DROP TABLE IF EXISTS `t_lesson`;
@@ -47,12 +82,16 @@ CREATE TABLE `t_lesson` (
   `property` int(8) NOT NULL COMMENT '性质id',
   `teacher` int(16) NOT NULL COMMENT '用户id',
   `credit` int(8) DEFAULT NULL COMMENT '学分',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `teacher` (`teacher`),
+  KEY `property` (`property`),
+  CONSTRAINT `property` FOREIGN KEY (`property`) REFERENCES `t_lesson_class` (`id`),
+  CONSTRAINT `teacher` FOREIGN KEY (`teacher`) REFERENCES `main` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_lesson` */
 
-insert  into `t_lesson`(`id`,`code`,`name`,`college`,`place`,`time`,`property`,`teacher`,`credit`) values (1,'B1400107','物理实验A1','物理科学与技术学院','崇理楼410','周三下午7-8节',1,6,3);
+insert  into `t_lesson`(`id`,`code`,`name`,`college`,`place`,`time`,`property`,`teacher`,`credit`) values (1,'B1400107','物理实验A1','物理科学与技术学院','崇理楼410','周三下午7-8节',1,6,3),(2,'B1400203','化学实验A1','环境工程与化学学院','环化楼320','周一7-8节；周四3-4节',2,7,3),(3,'B1400019','普通生物学实验A','生命科学与技术','生命学院204','周二5-6节',1,8,3);
 
 /*Table structure for table `t_lesson_class` */
 
