@@ -8,8 +8,6 @@
 
 let express = require('express');
 
-let app = express();
-
 let router = express.Router();
 let conDB = require('../mysql-connector/mysql-connector');
 let print = require('../plugins/print-log');
