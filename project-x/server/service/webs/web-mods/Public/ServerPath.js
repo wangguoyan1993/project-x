@@ -50,4 +50,4 @@ var serverHead = getBPBasePath();
 
 //完整路径
 var serverPath = serverHead + '/api/v1/';
-var middleHost = serverHead + '/api/v1a/';
+// var middleHost = serverHead + '/api/v1a/';
