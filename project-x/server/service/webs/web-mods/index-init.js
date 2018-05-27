@@ -93,7 +93,7 @@ let initIndexMod = (function(){
     function _timeInLoop() {
         let timeLoop = setInterval(()=>{
             _getTime((data)=>{
-                let sig = data.sig *= 1;
+                let sig = data.errorCode *= 1;
                 if(sig === 0){
 
                 }else{
