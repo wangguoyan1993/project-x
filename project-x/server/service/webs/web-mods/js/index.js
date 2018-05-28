@@ -73,9 +73,20 @@ layui.config({
 		}
 	}
 
+
 })
 
 //打开新窗口
 function addTab(_this){
 	tab.tabAdd(_this);
+}
+
+function myFunction(){
+    let param = {
+        account : window.top.user.account
+    };
+    let url = serverPath + 'login/logout';
+    ibcpAjax.Insert(url,param,true,function (result) {
+        console.log(result);
+    })
 }
