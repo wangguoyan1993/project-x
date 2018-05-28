@@ -108,6 +108,23 @@ function orderLab(req, res){
 }
 
 /**
+ * 查询实验室方法
+ * @param req
+ * @param res
+ */
+function queryAllLabs(req, res){
+    let sql = `SELECT * FROM t_lab`;
+    conDB(sql, (result)=>{
+        if(result){
+            res.send({
+                errorCode : 0,
+                data : result
+            });
+        }
+    });
+}
+
+/**
  * 确认预约实验室
  */
 router.post('/orderLabConfirm', (req, res)=>{
@@ -126,6 +143,10 @@ router.get('/queryLabOrder', (req, res)=>{
  */
 router.post('/orderLab', (req, res)=>{
     orderLab(req, res);
+});
+
+router.get('/queryAllLabs', (req, res)=>{
+    queryAllLabs(req, res);
 });
 
 module.exports = router;
