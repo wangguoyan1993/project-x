@@ -55,7 +55,7 @@ function loginMethod(req, res) {
     checkUserAccount(account, (ckResult)=>{
         if(ckResult){
             conDB(sql, function(result){
-                let relPassword = result[0].password;           //密码
+                let relPassword = result[0]['user_password'];           //密码
                 let userName = result[0].name;                  //用户姓名
                 let userId = result[0].id;                      //用户id
                 let userType = result[0].type;                  //用户类型
@@ -103,18 +103,23 @@ function updateUserPassword(req, res){
     let newPassword = req.body['newPassword'].toString();      //新密码
 
     //查询账号的原始密码
-    let sql = `SELECT password FROM main WHERE account=${account}`;
+    let sql = `SELECT user_password FROM main WHERE number=${account * 1}`;
     //调用查询原始密码
     conDB(sql, (result)=>{
         //获取真实原始密码
-        let realPassword = result[0].password.toString();
+        let realPassword = result[0]['user_password'].toString();
         if(realPassword === oldPassword){
-            let upSql = `UPDATE main password='${newPassword}' WHERE account=${account}`;
+            let upSql = `UPDATE main SET user_password='${newPassword}' WHERE number=${account}`;
             conDB(upSql, ()=>{
                 res.send({
                     errorCode : 0,
                     data : '修改成功！'
                 });
+            });
+        }else{
+            res.send({
+                errorCode : 1,
+                data : '原密码错误！'
             });
         }
     });

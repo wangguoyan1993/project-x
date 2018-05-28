@@ -47,11 +47,12 @@ let changePwdMods = function () {
 
         console.log(param);
 
-        let url = serverPath + 'login/updateKeyWord';
+        let url = serverPath + 'login/updatePassword';
         ibcpAjax.Insert(url,param,true,function (result) {
             console.log(result);
             if(result){
-                ibcpLayer.ShowMsg('密码修改成功！');
+                let str = result.data;
+                alert(str);
             }
         })
     };
