@@ -11,7 +11,7 @@ var navs = [{
 },{
 	"title" : "实验室浏览",
 	"icon" : "icon-text",
-	"href" : "page/laboratory/reservation-laboratory.html",
+	"href" : "page/reservation-laboratory/reservation-laboratory.html",
 	"spread" : false
 },{
     "title" : "实验室设备",
