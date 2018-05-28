@@ -185,3 +185,13 @@ let coursesMods = function () {
         pageSize : initPageSize
     }
 }();
+
+function propertyChange (value,row,index){
+    if(value === 1 ){
+        return value = "必修课";
+    }else if(value === 2){
+        return value ="专业必修课";
+    }else if(value === 3){
+        return value = "公共选修课"
+    }
+}
