@@ -9,15 +9,39 @@ var navs = [{
 	"href" : "page/courses/courses.html",
 	"spread" : false
 },{
-	"title" : "实验室预约",
+	"title" : "实验室浏览",
 	"icon" : "icon-text",
-	"href" : "page/reservations-laboratory/reservations-laboratory.html",
+	"href" : "page/laboratory/reservation-laboratory.html",
 	"spread" : false
 },{
     "title" : "实验室设备",
     "icon" : "&#xe61c;",
-    "href" : "page/404.html",
-    "spread" : false
+    "spread" : false,
+    "children" : [
+        {
+            "title" : "物理实验设备",
+            "icon" : "&#xe631;",
+            "href" : "page/physics-equipment/physics-equipment.html",
+            "spread" : false
+        },
+        {
+            "title" : "化学实验设备",
+            "icon" : "&#xe631;",
+            "href" : "",
+            "spread" : false
+        },
+        {
+            "title" : "生物实验设备",
+            "icon" : "&#xe631;",
+            "href" : "",
+            "spread" : false
+        },{
+            "title" : "医学实验设备",
+            "icon" : "&#xe631;",
+            "href" : "",
+            "spread" : false
+        }
+    ]
 },{
 	"title" : "实验教材教学",
 	"icon" : "icon-text",
