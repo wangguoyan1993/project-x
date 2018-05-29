@@ -17,7 +17,27 @@ let conDB = require('../mysql-connector/mysql-connector');
  * @param res
  */
 function deleteUser(req, res){
+    let account = req.body.account;
 
+    let ckSql = `SELECT * FROM main WHERE number=${account}`;
+
+    conDB(ckSql, (ckResult)=>{
+        if(ckResult && ckResult.length > 0){
+            let sql = `DELETE FROM main WHERE number=${account}`;
+
+            conDB(sql, (result)=>{
+                res.send({
+                    errorCode : 0,
+                    data : '删除成功！'
+                })
+            });
+        }else{
+            res.send({
+                errorCode : 1,
+                data : '用户不存在！'
+            });
+        }
+    });
 }
 
 /**
@@ -26,10 +46,10 @@ function deleteUser(req, res){
  * @param res
  */
 function addUser(req, res){
-    let userName = req.query.userName;
-    let number = req.query.number;
-    let userType = req.query.userType;
-    let password = req.query.password;
+    let userName = req.body.userName;
+    let number = req.body.number;
+    let userType = req.body.userType;
+    let password = req.body.password;
 
     //验证当前注册账号是否存在sql语句
     let ckSql = `SELECT * FROM main WHERE number=${number}`;
