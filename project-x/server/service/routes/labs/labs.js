@@ -40,26 +40,53 @@ function orderLabConfirm(req, res){
  * @param res
  */
 function queryLabOrder(req, res){
-    //查询sql语句
-    let sql = `SELECT 
-    t_lab_order.lab_id AS 'labId',
-    t_lab_order.uid AS 'uid',
-    t_lab_order.start_time AS 'startTime',
-    t_lab_order.end_time AS 'endTime',
-    t_lab_order.status_id AS 'statusId',
-    t_lab_order.reason AS 'reason',
-    t_lab.name AS 'labName',
-    t_lab.code AS 'labCode',
-    t_lab.collage AS 'collage',
-    t_lab.place AS 'place',
-    t_lab.time AS 'time',
-    main.name AS 'userName',
-    main.number AS 'account',
-    main.type AS 'userType',
-    t_lab_order_status.name AS 'statusName' FROM 
-    t_lab_order LEFT JOIN t_lab ON t_lab_order.lab_id = t_lab.id 
-    LEFT JOIN main ON t_lab_order.uid = main.id 
-    LEFT JOIN t_lab_order_status ON t_lab_order.status_id = t_lab_order_status.id`;
+    //获取请求中的用户id
+    let account = req.query.account;
+
+    if(uid){
+        //查询sql语句
+        let sql = `SELECT 
+        t_lab_order.lab_id AS 'labId',
+        t_lab_order.uid AS 'uid',
+        t_lab_order.start_time AS 'startTime',
+        t_lab_order.end_time AS 'endTime',
+        t_lab_order.status_id AS 'statusId',
+        t_lab_order.reason AS 'reason',
+        t_lab.name AS 'labName',
+        t_lab.code AS 'labCode',
+        t_lab.collage AS 'collage',
+        t_lab.place AS 'place',
+        t_lab.time AS 'time',
+        main.name AS 'userName',
+        main.number AS 'account',
+        main.type AS 'userType',
+        t_lab_order_status.name AS 'statusName' FROM 
+        t_lab_order LEFT JOIN t_lab ON t_lab_order.lab_id = t_lab.id 
+        LEFT JOIN main ON t_lab_order.uid = main.id 
+        LEFT JOIN t_lab_order_status ON t_lab_order.status_id = t_lab_order_status.id`;
+    }else{
+        //查询sql语句
+        let sql = `SELECT 
+        t_lab_order.lab_id AS 'labId',
+        t_lab_order.uid AS 'uid',
+        t_lab_order.start_time AS 'startTime',
+        t_lab_order.end_time AS 'endTime',
+        t_lab_order.status_id AS 'statusId',
+        t_lab_order.reason AS 'reason',
+        t_lab.name AS 'labName',
+        t_lab.code AS 'labCode',
+        t_lab.collage AS 'collage',
+        t_lab.place AS 'place',
+        t_lab.time AS 'time',
+        main.name AS 'userName',
+        main.number AS 'account',
+        main.type AS 'userType',
+        t_lab_order_status.name AS 'statusName' FROM 
+        t_lab_order LEFT JOIN t_lab ON t_lab_order.lab_id = t_lab.id 
+        LEFT JOIN main ON t_lab_order.uid = main.id 
+        LEFT JOIN t_lab_order_status ON t_lab_order.status_id = t_lab_order_status.id 
+        WHERE main.number=${account}`;
+    }
 
     //连接数据库查询结果
     conDB(sql, (result)=>{
