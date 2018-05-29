@@ -3,7 +3,14 @@ var navs = [
         "title" : "用户管理",
         "icon" : "icon-text",
         "href" : "page/user-manage/user-manage.html",
-        "spread" : false
+        "spread" : false,
+        "type" : 1
+    },{
+        "title" : "实验室预约处理",
+        "icon" : "icon-text",
+        "href" : "page/order-confirm/order-confirm.html",
+        "spread" : false,
+        "type" : 1
     },{
     "title" : "我的实验课程",
     "icon" : "icon-text",

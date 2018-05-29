@@ -62,16 +62,8 @@ let initIndexMod = (function(){
             window.top.user.uid = uid;
 
             if(type !== 1){
-                let $cites = $(window.top.document).find('ul.layui-nav.layui-nav-tree').find('cite');
-
-                for(let i = 0; i < $cites.length; i++){
-                    if($cites[i].innerText === '用户管理'){
-                        $($cites).parents('li.layui-nav-item').remove();
-                    }
-                }
-
                 for(let j = 0; j < navs.length; j++){
-                    if(navs[j].title === '用户管理'){
+                    if(navs[j].type === 1){
                         navs.splice(j,1);
                     }
                 }
