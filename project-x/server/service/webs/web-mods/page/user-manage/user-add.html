@@ -5,48 +5,51 @@
     <title>新增用户</title>
 </head>
 <body>
-<div class="form-group" style="margin:5px 0;">
-    <label for="account" class="col-md-3 control-label">账号: </label>
-    <div class="col-md-9">
-        <input type="text" class="form-control not-null" id="account">
+<form class="form-horizontal" role="form" style="padding : 15px;">
+    <div class="form-group">
+        <label for="account" class="col-md-3 control-label">账号: </label>
+        <div class="col-md-9">
+            <input type="text" class="form-control" id="account">
+        </div>
     </div>
-</div>
-
-<div class="form-group" style="margin:5px 0;">
-    <label for="name" class="col-md-3 control-label">姓名: </label>
-    <div class="col-md-9">
-        <input type="text" class="form-control not-null" id="name">
+    <div class="form-group">
+        <label for="name" class="col-md-3 control-label">姓名: </label>
+        <div class="col-md-9">
+            <input type="text" class="form-control" id="name">
+        </div>
     </div>
-</div>
-
-<div class="form-group" style="margin:5px 0;">
-    <label for="type" class="col-md-3 control-label">类型: </label>
-    <div class="col-md-9">
-        <select type="text" class="form-control" id="type">
-            <option value="1">管理员</option>
-            <option value="2">教师</option>
-            <option value="3">学生</option>
-        </select>
+    <div class="form-group">
+        <label for="type" class="col-md-3 control-label">类型: </label>
+        <div class="col-md-9">
+            <select type="text" class="form-control" id="type">
+                <option value="1">管理员</option>
+                <option value="2">教师</option>
+                <option value="3">学生</option>
+            </select>
+        </div>
     </div>
-</div>
-
-<div class="form-group" style="margin:5px 0;">
-    <label for="password" class="col-md-3 control-label">密码: </label>
-    <div class="col-md-9">
-        <input type="text" class="form-control not-null" id="password">
+    <div class="form-group">
+        <label for="password" class="col-md-3 control-label">密码: </label>
+        <div class="col-md-9">
+            <input type="text" class="form-control" id="password">
+        </div>
     </div>
-</div>
-
-<div class="form-group" style="margin:5px 0;">
-    <label for="password_again" class="col-md-3 control-label">确认密码: </label>
-    <div class="col-md-9">
-        <input type="text" class="form-control not-null" id="password_again">
+    <div class="form-group">
+        <label for="password_again" class="col-md-3 control-label">确认密码: </label>
+        <div class="col-md-9">
+            <input type="text" class="form-control" id="password_again">
+        </div>
     </div>
-</div>
-
-<div class="form-group" style="text-align:center;">
-    <button id="confirm_btn" type="button" class="btn btn-custom">确定</button>
-    <button id="cancel_btn" type="button" class="btn btn-custom">取消</button>
+</form>
+<div class="form-group" style = "margin-top: 20px">
+    <div class="col-md-12">
+        <div class="col-md-6" style="text-align: right">
+            <button type="button" id="confirm_btn" class="btn btn-custom">确定</button>
+        </div>
+        <div class="col-md-6" style="text-align: left">
+            <button type="button" id="cancel_btn" class="btn btn-custom">取消</button>
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -51,13 +51,12 @@ var navs = [
 },{
 	"title" : "实验教材教学",
 	"icon" : "icon-text",
-	"href" : "page/links/linksList.html",
 	"spread" : false,
     "children" : [
         {
             "title" : "物理实验教材",
             "icon" : "&#xe631;",
-            "href" : "",
+            "href" : "page/physics-textbook/textbook.html",
             "spread" : false
         },
         {
@@ -81,13 +80,12 @@ var navs = [
 },{
 	"title" : "实验教学视频",
 	"icon" : "&#xe61c;",
-	"href" : "",
 	"spread" : false,
 	"children" : [
 		{
 			"title" : "物理实验教学视频",
 			"icon" : "&#xe631;",
-			"href" : "",
+			"href" : "page/physics-video/video.html",
 			"spread" : false
 		},
 		{
