@@ -31,7 +31,7 @@ function orderLabConfirm(req, res){
                 data : '操作成功！'
             });
         }
-    })
+    });
 }
 
 /**
@@ -43,9 +43,11 @@ function queryLabOrder(req, res){
     //获取请求中的用户id
     let account = req.query.account;
 
-    if(uid){
+    let sql = '';
+
+    if(!account){
         //查询sql语句
-        let sql = `SELECT 
+        sql = `SELECT 
         t_lab_order.lab_id AS 'labId',
         t_lab_order.uid AS 'uid',
         t_lab_order.start_time AS 'startTime',
@@ -66,7 +68,7 @@ function queryLabOrder(req, res){
         LEFT JOIN t_lab_order_status ON t_lab_order.status_id = t_lab_order_status.id`;
     }else{
         //查询sql语句
-        let sql = `SELECT 
+        sql = `SELECT 
         t_lab_order.lab_id AS 'labId',
         t_lab_order.uid AS 'uid',
         t_lab_order.start_time AS 'startTime',
