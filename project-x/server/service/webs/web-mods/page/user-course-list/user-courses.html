@@ -5,158 +5,70 @@
     <title>我的实验课程表</title>
 </head>
 <body style="overflow-x: hidden">
-<!-- 多功能操作区 -->
-<!-- 内容显示区开始 -->
-<div class="main_box ">
-    <div class="mid_box">
-        <div class="title noprint">
-            <p><!-- 查询得到的数据量显示区域 --></p>
+    <div class="panel panel-default" id="table1">
+        <div class= "panel-heading">
+            <h3><span class="label label-custom">学生个人实验课程列表</span></h3>
         </div>
-		<!-- From内容 -->
-		<span class="formbox">
-			<table class="formlist noprint" id="Table2" width="100%">
-				<tr>
-					<td align="center">
-						<select name="xnd" onchange="__doPostBack('xnd','')" language="javascript" id="xnd">
-							<option value="2017-2018">2017-2018</option>
-							<option value="2016-2017">2016-2017</option>
-							<option value="2015-2016">2015-2016</option>
-							<option selected="selected" value="2014-2015">2014-2015</option>
-						</select><span id="Label2"><font size="4">学年第</font></span>
-						<select name="xqd" onchange="__doPostBack('xqd','')" language="javascript" id="xqd">
-							<option value="1">1</option>
-							<option selected="selected" value="2">2</option>
-							<option value="3">3</option>
-						</select><span id="Label1"><font size="4">学期学生个人课程表</font></span>
-					</td>
-				</tr>
-				<tr class="trbg1">
-					<td>
-						<span id="Label5">学号：14403030</span>|
-						<span id="Label6">姓名：麻仓连</span>|
-						<span id="Label7">学院：物理科学与技术学院</span>|
-						<span id="Label8">专业：应用物理学</span>|
-						<span id="Label9">行政班：应物142</span>
-					</td>
-				</tr>
-			</table>
-			<table id="Table1" class="blacktab" bordercolor="Black" border="0" width="100%">
-				<tr>
-					<td colspan="2" rowspan="1" width="2%">时间</td>
-					<td align="Center" width="14%">星期一</td>
-					<td align="Center" width="14%">星期二</td>
-					<td align="Center" width="14%">星期三</td>
-					<td align="Center" width="14%">星期四</td>
-					<td align="Center" width="14%">星期五</td>
-					<td class="noprint" align="Center" width="14%">星期六</td>
-					<td class="noprint" align="Center" width="14%">星期日</td>
-				</tr>
-				<tr>
-					<td colspan="2">早晨</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td class="noprint" align="Center"></td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td rowspan="4" width="1%">上午</td>
-					<td width="1%">第1节</td>
-					<td align="Center" rowspan="2" width="7%">体育Ⅱ(健美操)<br>周一第1,2节{第1-17周}<br>白光<br>中心体育馆</td>
-					<td align="Center" rowspan="2" width="7%">普通物理实验1<br>周二第1,2节{第2-16周|双周}<br>部德才/霍飒<br>物理楼</td>
-					<td align="Center" rowspan="2" width="7%">普通物理实验1<br>周三第1,2节{第1-17周}<br>部德才/霍飒<br>物理楼</td>
-					<td align="Center" rowspan="2" width="7%">普通物理学2<br>周四第1,2节{第1-17周}<br>韩光<br>理阶101<br>2015年07月06日(13:30-15:20)<br>新文208</td>
-					<td align="Center" width="7%">&nbsp;</td>
-					<td class="noprint" align="Center" width="7%"></td>
-					<td class="noprint" align="Center" width="7%">&nbsp;</td>
-				</tr>
-				<tr>
-					<td>第2节</td>
-					<td align="Center"></td>
-					<td class="noprint" align="Center"></td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td>第3节</td>
-					<td align="Center" rowspan="2">高等数学A2<br>周一第3,4节{第1-17周}<br>刘自新<br>新理116<br>2015年07月06日(09:00-10:50)<br>新理101</td>
-					<td align="Center" rowspan="2">线性代数B<br>周二第3,4节{第1-17周}<br>李淑敏<br>理阶201</td>
-					<td align="Center" rowspan="2">高等数学A2<br>周三第3,4节{第1-17周}<br>刘自新<br>理阶109<br>2015年07月06日(09:00-10:50)<br>新理101</td>
-					<td align="Center" rowspan="2">大学英语Ⅱ<br>周四第3,4节{第1-17周}<br>高颖超<br>外语410<br>2015年07月07日(09:00-10:50)<br>新理210</td>
-					<td align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td>第4节</td>
-					<td align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td rowspan="4" width="1%">下午</td>
-					<td>第5节</td>
-					<td align="Center" rowspan="2">大学英语Ⅱ<br>周一第5,6节{第1-17周}<br>高颖超<br>文综B座111<br>2015年07月07日(09:00-10:50)<br>新理210</td>
-					<td align="Center" rowspan="2">普通物理学2<br>周二第5,6节{第1-12周}<br>韩光<br>理阶109<br>2015年07月06日(13:30-15:20)<br>新文208<br><br>普通物理学2<br>周二第5,6节{第14-18周}<br>韩光<br>理阶109<br>2015年07月06日(13:30-15:20)<br>新文208</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center" rowspan="2">高等数学A2<br>周五第5,6节{第1-17周}<br>刘自新<br>新理214<br>2015年07月06日(09:00-10:50)<br>新理101</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td>第6节</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td>第7节</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center" rowspan="2">思想道德修养与法律基础<br>周四第7,8节{第1-13周}<br>刘健<br>文阶301</td>
-					<td align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td>第8节</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td rowspan="2" width="1%">晚上</td>
-					<td>第9节</td>
-					<td align="Center" rowspan="2">森林生态系统<br>周一第9,10,11节{第1-14周}<br>王贺新<br>新理201</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td>第10节</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-					<td class="noprint" align="Center">&nbsp;</td>
-				</tr>
-			</table>
-		</span>
+        <div class="panel-body">
+            <!--列表内容-->
+            <div class="bootstrap-table table" id="box1">
+                <div class="table-responsive">
+                    <table id="courses_table" data-toggle="table"
+                           data-click-to-select="true"
+                           data-striped="true"
+                           data-row-style="rowStyle"
+                           data-cell-style="cellStyle"
+                           data-pagination="true"
+                           data-unique-id="id">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                            <th data-field="id" data-visible="false">id</th>
+                            <th data-field="code" data-align="left" data-halign="center">课程代码</th>
+                            <th data-field="name" data-align="left" data-halign="center">课程名称</th>
+                            <th data-field="place" data-align="left" data-halign="center">上课地点</th>
+                            <th data-field="time" data-align="left" data-halign="center">上课时间</th>
+                            <th data-field="property" data-align="left" data-halign="center" data-formatter='propertyChange'>课程性质</th>
+                            <th data-field="teacher" data-visible="left" data-halign="center">任课教师</th>
+                            <th data-field="credit" data-align="left" data-halign="center">学分</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-</form>
-
+    <div class="panel panel-default" id="table2">
+        <div class= "panel-heading">
+            <h3><span class="label label-custom">实验室预约列表</span></h3>
+        </div>
+        <div class="panel-body">
+            <!--列表内容-->
+            <div class="bootstrap-table table" id="box2">
+                <div class="table-responsive">
+                    <table id="reservation_table" data-toggle="table"
+                           data-click-to-select="true"
+                           data-striped="true"
+                           data-row-style="rowStyle"
+                           data-cell-style="cellStyle"
+                           data-pagination="true"
+                           data-unique-id="id">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                            <th data-field="id" data-visible="false">id</th>
+                            <th data-field="labCode" data-align="left" data-halign="center">实验室代码</th>
+                            <th data-field="labName" data-align="left" data-halign="center">实验室名称</th>
+                            <th data-field="place" data-align="left" data-halign="center">实验室地点</th>
+                            <th data-field="time" data-align="left" data-halign="center">预约时间</th>
+                            <th data-field="statusName" data-visible="left" data-halign="center">预约状态</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 <script src="../../Public/publicjs.js"></script>
 <script src="../../../public/plugin.js"></script>
 <script src="user-courses.js"></script>
