@@ -69,18 +69,14 @@ let textbookMods = function () {
 
     //预约按钮事件
     let _detailedData = () => {
-        $(function() {
-            $('a.media').media({width:800, height:600});
-        });
         let selectData = $('#laboratory_table').bootstrapTable('getSelections')[0];
-        // let index = ibcpLayer.ShowDiv('textPdf.html','教材详情', '800px', '800px',function(){
-        //     $('a.media').media();
-        //
-        //     //确认按钮
-        //     $('#close').on('click',function(){
-        //         ibcpLayer.Close(index);
-        //     });
-        // });
+        let index = ibcpLayer.ShowDiv('textPdf.html','教材详情', '800px', '800px',function(){
+
+            //确认按钮
+            $('#close').on('click',function(){
+                ibcpLayer.Close(index);
+            });
+        });
     };
 
     let init =  () => {
