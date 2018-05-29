@@ -76,6 +76,23 @@ function addUser(req, res){
 }
 
 /**
+ * 查询用户
+ * @param req
+ * @param res
+ */
+function queryUsers(req, res){
+    let sql = `SELECT * FROM main`;
+    conDB(sql, (result)=>{
+        if(result){
+            res.send({
+                errorCode : 0,
+                data : result
+            });
+        }
+    });
+}
+
+/**
  * 添加用户
  */
 router.post('/addUser', (req, res)=>{
@@ -84,6 +101,10 @@ router.post('/addUser', (req, res)=>{
 
 router.post('/deleteUser', (req, res)=>{
     deleteUser(req, res);
+});
+
+router.get('/queryUsers', (req, res)=>{
+    queryUsers(req, res);
 });
 
 module.exports = router;

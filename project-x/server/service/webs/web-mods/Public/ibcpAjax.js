@@ -134,17 +134,8 @@
                     callBack(result);
                 }
                 else{
-                    if(errCode == -1){
-                        //重置页面
-                        window.top.location.href = serverHead + "/login.html";
-                    }
-                    else {
-                        if(errCode == "240027497" || errCode == "225094649" || errCode == "219220413" || errCode == "242371535"){
-                            showSignErrInfo(result.data,errCode);
-                            return;
-                        }
-
-                        ShowErrInfo(errCode);
+                    if(errCode === 1){
+                        ibcpLayer.ShowMsg(result.data, 2);
                     }
                 }
             },

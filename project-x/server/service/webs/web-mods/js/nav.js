@@ -1,4 +1,10 @@
-var navs = [{
+var navs = [
+    {
+        "title" : "用户管理",
+        "icon" : "icon-text",
+        "href" : "page/user-manage/user-manage.html",
+        "spread" : false
+    },{
     "title" : "我的实验课程",
     "icon" : "icon-text",
     "href" : "page/user-course-list/user-courses.html",
