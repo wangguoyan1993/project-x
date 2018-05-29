@@ -22,7 +22,7 @@ function orderLabConfirm(req, res){
     let statusId = req.body.statusId;
     let reason = req.body.reason;
 
-    let sql = `UPDATE t_lab_order SET status_id=${statusId},reason=${reason} WHERE lab_id=${labId} AND uid=${uid}`;
+    let sql = `UPDATE t_lab_order SET status_id=${statusId},reason='${reason}' WHERE lab_id=${labId} AND uid=${uid}`;
 
     conDB(sql, (result)=>{
         if(result){

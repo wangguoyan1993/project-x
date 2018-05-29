@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑预约信息</title>
+</head>
+<body>
+<div class="form-horizontal" role="form" style="padding : 15px;">
+
+    <div class="form-group">
+        <label for="type" class="col-md-3 control-label">状态: </label>
+        <div class="col-md-9">
+            <select type="text" class="form-control" id="type">
+                <option value="2">同意</option>
+                <option value="3">拒绝</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="reason" class="col-md-3 control-label">原因: </label>
+        <div class="col-md-9">
+            <textarea rows="3" type="text" class="form-control" id="reason"></textarea>
+        </div>
+    </div>
+</div>
+<div class="form-group" style = "margin-top: 20px">
+    <div class="col-md-12">
+        <div class="col-md-6" style="text-align: right">
+            <button type="button" id="confirm_btn" class="btn btn-custom">确定</button>
+        </div>
+        <div class="col-md-6" style="text-align: left">
+            <button type="button" id="cancel_btn" class="btn btn-custom">取消</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
