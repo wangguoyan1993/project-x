@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>物理实验设备</title>
+    <title>物理实验教材</title>
 </head>
 <body style="overflow-x: hidden">
 <!--列表区域面板-->
@@ -20,7 +20,7 @@
         <!--列表内容-->
         <div class="bootstrap-table table" >
             <div class="table-responsive">
-                <table id="equipment_table" data-toggle="table"
+                <table id="textbook_table" data-toggle="table"
                        data-click-to-select="true"
                        data-striped="true"
                        data-row-style="rowStyle"
@@ -31,11 +31,11 @@
                     <tr>
                         <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
                         <th data-field="id" data-visible="false">id</th>
-                        <th data-field="code" data-align="left" data-halign="center">设备代码</th>
-                        <th data-field="name" data-align="left" data-halign="center">设备名称</th>
-                        <th data-field="version" data-align="left" data-halign="center">设备型号</th>
-                        <th data-field="quantity" data-align="left" data-halign="center">设备数量</th>
-                        <th data-field="property" data-align="left" data-halign="center">设备性质</th>
+                        <th data-field="code" data-align="left" data-halign="center">教材代码</th>
+                        <th data-field="name" data-align="left" data-halign="center">教材名称</th>
+                        <th data-field="author" data-align="left" data-halign="center">教材作者</th>
+                        <th data-field="press" data-align="left" data-halign="center">教材出版社</th>
+                        <th data-field="version" data-align="left" data-halign="center">教材版本</th>
                     </tr>
                     </thead>
                 </table>
@@ -45,6 +45,6 @@
 </div>
 <script src="../../Public/publicjs.js"></script>
 <script src="../../../public/plugin.js"></script>
-<script src="physics-eqm.js"></script>
+<script src="textbook.js"></script>
 </body>
 </html>

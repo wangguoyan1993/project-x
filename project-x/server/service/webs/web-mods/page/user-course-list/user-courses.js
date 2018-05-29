@@ -47,7 +47,10 @@ let coursesMods = function () {
         $('#courses_table').bootstrapTable('check',0);
 
         //正常数据：调用接口搜索数据加载表格
-        let param = {};
+        let param = {
+            account : window.top.user.account
+        };
+        console.log(param);
         let url = serverPath + 'labs/queryLabOrder';
         ibcpAjax.Select(url,param,true,function (result) {
             console.log(result);
