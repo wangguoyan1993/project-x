@@ -62,7 +62,7 @@ let initIndexMod = (function(){
             window.top.user.uid = uid;
 
             if(type !== 1){
-                for(let j = 0; j < navs.length; j++){
+                for(let j = navs.length - 1; j >= 0; j--){
                     if(navs[j].type === 1){
                         navs.splice(j,1);
                     }
