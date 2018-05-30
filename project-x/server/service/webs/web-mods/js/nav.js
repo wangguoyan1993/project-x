@@ -118,16 +118,16 @@ var navs = [
 },{
     "title" : "实验信息交流区",
     "icon" : "&#xe631;",
-    "href" : "page/systemParameter/systemParameter.html",
+    "href" : "",
     "spread" : false
 },{
     "title" : "实验室安全考试",
     "icon" : "&#xe631;",
-    "href" : "page/systemParameter/systemParameter.html",
+    "href" : "",
     "spread" : false
 },{
     "title" : "实验室监控",
     "icon" : "&#xe631;",
-    "href" : "page/systemParameter/systemParameter.html",
+    "href" : "",
     "spread" : false
 }]
