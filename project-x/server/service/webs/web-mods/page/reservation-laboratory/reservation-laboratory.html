@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预约实验室</title>
+</head>
+<body style="overflow-x: hidden">
+<!--搜索区面板-->
+<div class="panel panel-default" id="search_area">
+    <div class= "panel-heading">
+        <h3><span class="label label-custom">搜索区</span></h3>
+    </div>
+    <div class="panel-body row">
+        <div class="form-group col-md-3 ">
+            <div class="input-group" style="position: relative">
+                <div class="input-group-addon">实验室代码</div>
+                <input class="form-control customer-input" type="text" id="laboratory_code" placeholder="请输入代码后三位">
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <div class="input-group">
+                <div class="input-group-addon">实验室名称</div>
+                <input class="form-control customer-input" type="text" id="laboratory_name" placeholder="请输入名称">
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <div class="input-group">
+                <div class="input-group-addon">所属学院</div>
+                <input class="form-control customer-input" type="text" id="laboratory_college" placeholder="请输入学院">
+            </div>
+        </div>
+        <div class="col-md-1">
+            <button id="search" type="button" class="btn btn-custom btn-sm">搜索</button>
+        </div>
+    </div>
+</div>
+
+<!--列表区域面板-->
+<div class="panel panel-default" id="table">
+    <div class= "panel-heading">
+        <h3><span class="label label-custom">实验室列表</span></h3>
+    </div>
+    <div class="panel-body">
+        <!--面板内按钮-->
+        <div style="text-align: right">
+            <div class="btn btn-group-sm" style="padding: 2px 5px;" >
+                <button id="reservation_btn" type="button" class="btn btn-custom "><span class="fa fa-edit"></span>预约</button>
+            </div>
+        </div>
+        <!--列表内容-->
+        <div class="bootstrap-table table" >
+            <div class="table-responsive">
+                <table id="laboratory_table" data-toggle="table"
+                       data-click-to-select="true"
+                       data-striped="true"
+                       data-row-style="rowStyle"
+                       data-cell-style="cellStyle"
+                       data-pagination="true"
+                       data-unique-id="id">
+                    <thead>
+                    <tr>
+                        <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                        <th data-field="id" data-visible="false">id</th>
+                        <th data-field="code" data-align="left" data-halign="center">实验室代码</th>
+                        <th data-field="name" data-align="left" data-halign="center">实验室名称</th>
+                        <th data-field="collage" data-align="left" data-halign="center">所属学院</th>
+                        <th data-field="place" data-align="left" data-halign="center">实验室地点</th>
+                        <th data-field="time" data-align="left" data-halign="center">实验室日程</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../Public/publicjs.js"></script>
+<script src="../../../public/plugin.js"></script>
+<script src="reservation-laboratory.js"></script>
+</body>
+</html>

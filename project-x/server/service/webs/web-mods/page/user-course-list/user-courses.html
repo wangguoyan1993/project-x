@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的实验课程表</title>
+</head>
+<body style="overflow-x: hidden">
+    <div class="panel panel-default" id="table1">
+        <div class= "panel-heading">
+            <h3><span class="label label-custom">学生个人实验课程列表</span></h3>
+        </div>
+        <div class="panel-body">
+            <!--列表内容-->
+            <div class="bootstrap-table table" id="box1">
+                <div class="table-responsive">
+                    <table id="courses_table" data-toggle="table"
+                           data-click-to-select="true"
+                           data-striped="true"
+                           data-row-style="rowStyle"
+                           data-cell-style="cellStyle"
+                           data-pagination="true"
+                           data-unique-id="id">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                            <th data-field="id" data-visible="false">id</th>
+                            <th data-field="code" data-align="left" data-halign="center">课程代码</th>
+                            <th data-field="name" data-align="left" data-halign="center">课程名称</th>
+                            <th data-field="place" data-align="left" data-halign="center">上课地点</th>
+                            <th data-field="time" data-align="left" data-halign="center">上课时间</th>
+                            <th data-field="property" data-align="left" data-halign="center" data-formatter='propertyChange'>课程性质</th>
+                            <th data-field="teacher" data-visible="left" data-halign="center">任课教师</th>
+                            <th data-field="credit" data-align="left" data-halign="center">学分</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" id="table2">
+        <div class= "panel-heading">
+            <h3><span class="label label-custom">实验室预约列表</span></h3>
+        </div>
+        <div class="panel-body">
+            <!--列表内容-->
+            <div class="bootstrap-table table" id="box2">
+                <div class="table-responsive">
+                    <table id="reservation_table" data-toggle="table"
+                           data-click-to-select="true"
+                           data-striped="true"
+                           data-row-style="rowStyle"
+                           data-cell-style="cellStyle"
+                           data-pagination="true"
+                           data-unique-id="id">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                            <th data-field="id" data-visible="false">id</th>
+                            <th data-field="labCode" data-align="left" data-halign="center">实验室代码</th>
+                            <th data-field="labName" data-align="left" data-halign="center">实验室名称</th>
+                            <th data-field="place" data-align="left" data-halign="center">实验室地点</th>
+                            <th data-field="time" data-align="left" data-halign="center">预约时间</th>
+                            <th data-field="statusName" data-visible="left" data-halign="center">预约状态</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="../../Public/publicjs.js"></script>
+<script src="../../../public/plugin.js"></script>
+<script src="user-courses.js"></script>
+</body>
+</html>

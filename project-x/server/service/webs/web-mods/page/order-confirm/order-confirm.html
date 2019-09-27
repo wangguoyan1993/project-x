@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实验室预约确认画面</title>
+</head>
+<body>
+<div class="panel panel-default" id="table">
+    <div class= "panel-heading">
+        <h3><span class="label label-custom">实验室预约列表</span></h3>
+    </div>
+    <div class="panel-body">
+        <div style="text-align: right">
+            <div class="btn btn-group-sm" style="padding: 2px 5px;">
+                <button id="edit_btn" type="button" class="btn btn-custom" title="确认"><span class="fa fa-edit"></span></button>
+            </div>
+        </div>
+        <!--列表内容-->
+        <div class="bootstrap-table table" >
+            <div class="table-responsive">
+                <table id="order_table" data-toggle="table"
+                       data-click-to-select="true"
+                       data-striped="true"
+                       data-row-style="rowStyle"
+                       data-cell-style="cellStyle"
+                       data-pagination="true">
+                    <thead>
+                    <tr>
+                        <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                        <th data-field="labCode" data-align="left" data-halign="center">实验室代码</th>
+                        <th data-field="labName" data-align="left" data-halign="center">实验室名称</th>
+                        <th data-field="userName" data-align="left" data-halign="center">预约人</th>
+                        <th data-field="time" data-align="left" data-halign="center">时间</th>
+                        <th data-field="statusName" data-align="left" data-halign="center">状态</th>
+                        <th data-field="reason" data-align="left" data-halign="center">原因</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../Public/publicjs.js"></script>
+<script src="../../../public/plugin.js"></script>
+<script src="order-confirm.js"></script>
+</body>
+</html>

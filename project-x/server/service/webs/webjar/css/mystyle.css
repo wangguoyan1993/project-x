@@ -1,0 +1,140 @@
+/**
+ *自定义样式
+ * Created by TuDeCai on 2016/12/5.
+ */
+
+/*表格标题的样式*/
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*.label {*/
+    /*padding: .2em .6em;*/
+    /*border-radius: .1em;*/
+/*}*/
+
+/*面板主体内边距*/
+.panel-body {
+    padding:10px 10px;
+}
+
+/*面板主体内*/
+.form-group{
+    margin-bottom: 10px;
+}
+
+/*面板头部内边距*/
+.panel-default>.panel-heading {
+    padding: 3px 2px;
+    /*border-color: #009688;*/
+}
+
+/*面板外边距*/
+.panel {
+    margin: 10px 5px;
+}
+
+/*面板边框颜色*/
+.panel-default {
+    border-color: #009688;
+}
+
+/*表格底部外边距*/
+.table {
+    margin-bottom: 0px;
+}
+
+/*按钮自定义颜色，为了搭配框架主题色*/
+.btn-custom {
+    color: #fff;
+    background-color: #009688;
+    border-color: #009688;
+}
+
+/*小按钮字体大小*/
+.btn-group-sm>.btn, .btn-sm {
+    font-size: 14px;
+}
+
+/*面板标题文本框的字体颜色*/
+.label-custom{
+    color:black;
+}
+
+/*表单控件的高度。为了设置搜索区select控件的大小*/
+/*.form-control {*/
+    /*height: 33px;*/
+/*}*/
+
+/*表格底部页码的背景色*/
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus{
+    background-color: #009688;
+    border-color: #009688;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('');
+    src: url('../bootstrap/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../bootstrap/iconfont/iconfont.woff') format('woff'),
+    url('../bootstrap/iconfont/iconfont.ttf') format('truetype'),
+    url('../bootstrap/iconfont/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: #00b3ee;
+}
+.clear-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+    cursor:pointer;
+}
+
+.btn-search {
+    position: absolute;
+    right: -55px;
+    top: 5px;
+    z-index: 10;
+}
+fieldset{
+    padding:10px;
+    margin:5px;
+    border:1px solid #ccc;
+}
+legend{
+    padding: 0px;
+    border:0;
+    width:auto;
+    margin-bottom: 0;
+    font-size: large;
+    font-weight: bolder;
+}
+.bootstrap-table th , .bootstrap-table td {
+    text-align: center;
+}
+
+/*禁止选中样式*/
+.ibcp-no-select {
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+}
+
+table{
+    word-wrap:break-word;
+    word-break:break-all;
+    white-space:normal;
+}
+
+.fixed-table-header {
+    background-color : #F1F1F1;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>修改密码</title>
+</head>
+<body class="childrenBody">
+<form class="form-horizontal" role="form" style="padding : 15px;">
+    <div class="form-group">
+        <label for="name" class="col-md-3 control-label">用户名: </label>
+        <div class="col-md-3">
+            <input type="text" class="form-control" id="name" readonly>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="oldPwd" class="col-md-3 control-label">旧密码: </label>
+        <div class="col-md-3">
+            <input type="password" class="form-control" id="oldPwd" >
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="newPwd" class="col-md-3 control-label">新密码: </label>
+        <div class="col-md-3">
+            <input type="password" class="form-control" id="newPwd" >
+        </div>
+    </div>
+    <div class="form-group" style = "margin-top: 20px">
+        <div class="col-md-10">
+            <div class="col-md-6" style="text-align: right">
+                <button type="button" id="confirm" class="btn btn-custom">确定</button>
+            </div>
+            <div class="col-md-6" style="text-align: left">
+                <button type="button" id="cancel" class="btn btn-custom">重置</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="../../Public/publicjs.js"></script>
+<script src="../../../public/plugin.js"></script>
+<script type="text/javascript" src="change-password.js"></script>
+</body>
+</html>

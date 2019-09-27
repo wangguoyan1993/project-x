@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+</head>
+<body>
+<div class="panel panel-default" id="table">
+    <div class= "panel-heading">
+        <h3><span class="label label-custom">用户列表</span></h3>
+    </div>
+    <div class="panel-body">
+        <div style="text-align: right">
+            <div class="btn btn-group-sm" style="padding: 2px 5px;" >
+                <button id="user_add_button" type="button" class="btn btn-custom" title="新增用户"><span class="fa fa-plus"></span></button>
+                <button id="user_delete_button" type="button" class="btn btn-custom" title="删除用户"><span class="fa fa-trash"></span></button>
+            </div>
+        </div>
+        <!--列表内容-->
+        <div class="bootstrap-table table" >
+            <div class="table-responsive">
+                <table id="user_table" data-toggle="table"
+                       data-click-to-select="true"
+                       data-striped="true"
+                       data-row-style="rowStyle"
+                       data-cell-style="cellStyle"
+                       data-pagination="true"
+                       data-unique-id="id">
+                    <thead>
+                    <tr>
+                        <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                        <th data-field="id" data-visible="false">id</th>
+                        <th data-field="name" data-align="left" data-halign="center">姓名</th>
+                        <th data-field="number" data-align="left" data-halign="center">账号</th>
+                        <th data-field="type" data-align="center" data-halign="center" data-formatter="userTypeFormatter">身份</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../Public/publicjs.js"></script>
+<script src="../../../public/plugin.js"></script>
+<script src="user-manage.js"></script>
+</body>
+</html>

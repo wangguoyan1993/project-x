@@ -1,0 +1,9 @@
+##ignore this file##
+/target/
+
+.idea/*
+.git/*
+project-x/.idea/*
+*.flash
+*.mp4
+*.pdf

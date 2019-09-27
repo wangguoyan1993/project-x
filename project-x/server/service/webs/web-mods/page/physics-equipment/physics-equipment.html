@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>物理实验设备</title>
+</head>
+<body style="overflow-x: hidden">
+<!--列表区域面板-->
+<div class="panel panel-default" id="table">
+    <div class= "panel-heading">
+        <h3><span class="label label-custom">实验设备列表</span></h3>
+    </div>
+    <div class="panel-body">
+        <!--面板内按钮-->
+        <div style="text-align: right">
+            <div class="btn btn-group-sm" style="padding: 2px 5px;" >
+                <button id="detailed_btn" type="button" class="btn btn-custom "><span class="fa fa-edit"></span>详情</button>
+            </div>
+        </div>
+        <!--列表内容-->
+        <div class="bootstrap-table table" >
+            <div class="table-responsive">
+                <table id="equipment_table" data-toggle="table"
+                       data-click-to-select="true"
+                       data-striped="true"
+                       data-row-style="rowStyle"
+                       data-cell-style="cellStyle"
+                       data-pagination="true"
+                       data-unique-id="id">
+                    <thead>
+                    <tr>
+                        <th data-field="state" data-radio="true" data-class="columns-display-none"></th>
+                        <th data-field="id" data-visible="false">id</th>
+                        <th data-field="code" data-align="left" data-halign="center">设备代码</th>
+                        <th data-field="name" data-align="left" data-halign="center">设备名称</th>
+                        <th data-field="version" data-align="left" data-halign="center">设备型号</th>
+                        <th data-field="quantity" data-align="left" data-halign="center">设备数量</th>
+                        <th data-field="property" data-align="left" data-halign="center">设备性质</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../Public/publicjs.js"></script>
+<script src="../../../public/plugin.js"></script>
+<script src="physics-eqm.js"></script>
+</body>
+</html>

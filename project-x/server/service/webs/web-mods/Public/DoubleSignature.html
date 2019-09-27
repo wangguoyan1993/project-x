@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双人签名</title>
+</head>
+<body>
+    <div class="col-xs-6" style="padding:5px">
+            <div class="panel panel-default" style="margin: 5px 0px">
+                <div class= "panel-heading" style="background-color: white">
+                    <span class="label label-custom" style="font-size: 17px">签名一</span>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputSigMeaning" class="col-xs-3 control-label" style="color: #333">签名含义</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="inputSigMeaning" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectUG1" class="col-xs-3 control-label" style="color: #333">签名组</label>
+                            <div class="col-xs-9">
+                                <select id="selectUG1" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectUsers1" class="col-xs-3 control-label" style="color: #333">签名人</label>
+                            <div class="col-xs-9">
+                                <select id="selectUsers1" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPWD1" class="col-xs-3 control-label" style="color: #333">密码</label>
+                            <div class="col-xs-9">
+                                <input type="password" class="form-control" placeholder="请输入密码" id="inputPWD1" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputComment1" class="col-xs-3 control-label" style="color: #333">备注</label>
+                            <div class="col-xs-9">
+                                <textarea  class="form-control" id="inputComment1" placeholder="备注" rows="3" style="margin-top: 0px;resize: none"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0px">
+                            <div class="col-xs-3 col-xs-offset-3">
+                                <button type="button" id="btnSignFirst" class="btn btn-custom"> 签 名 </button>
+                            </div>
+                            <div class="col-xs-3">
+                                <button type="button" disabled id="btnSignFirstReset" class="btn btn-danger"> 重 置 </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <div class="col-xs-6" style="padding:5px">
+            <div class="panel panel-default" style="margin: 5px 0px">
+                <div class= "panel-heading" style="background-color: white">
+                    <span class="label label-custom" style="font-size: 17px">签名二</span>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputSigMeaning2" class="col-xs-3 control-label" style="color: #333">签名含义</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="inputSigMeaning2" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectUG2" class="col-xs-3 control-label" style="color: #333">签名组</label>
+                            <div class="col-xs-9">
+                                <select id="selectUG2" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectUsers2" class="col-xs-3 control-label" style="color: #333">签名人</label>
+                            <div class="col-xs-9">
+                                <select id="selectUsers2" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPWD2" class="col-xs-3 control-label" style="color: #333">密码</label>
+                            <div class="col-xs-9">
+                                <input type="password" class="form-control" placeholder="请输入密码" id="inputPWD2" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputComment2" class="col-xs-3 control-label" style="color: #333">备注</label>
+                            <div class="col-xs-9">
+                                <textarea  class="form-control" id="inputComment2" placeholder="备注" rows="3" style="margin-top: 0px;resize: none"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0px">
+                            <div class="col-xs-3 col-xs-offset-3">
+                                <button type="button" id="btnSignOk" disabled class="btn btn-custom"> 签 名 </button>
+                            </div>
+                            <div class="col-xs-3">
+                                <button type="button" id="btnSignCancel" class="btn btn-danger"> 关闭 </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
