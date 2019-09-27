@@ -1,2 +1,2 @@
 # project-x
-create it for you
+teach management sys
